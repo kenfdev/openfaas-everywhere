@@ -1,8 +1,60 @@
 provider:
   name: faas
-  gateway: http://127.0.0.1:8080
+  gateway: http://gateway.openfaas.local
 functions:
   faas-nuxt-graphql:
     lang: dockerfile
     handler: ./faas-nuxt-graphql
     image: kenfdev/faas-nuxt-graphql:latest
+    environment:
+      GATEWAY_URL: http://gateway.openfaas:8080
+    environment_file:
+      - .env.yml
+  faas-nodejs:
+    lang: node
+    handler: ./faas-nodejs
+    image: kenfdev/faas-nodejs:latest
+    environment_file:
+      - .env.yml
+    environment:
+      content_type: 'application/json'
+  faas-go:
+    lang: go
+    handler: ./faas-go
+    image: kenfdev/faas-go:latest
+    environment_file:
+      - .env.yml
+    environment:
+      content_type: 'application/json'
+  faas-python:
+    lang: python
+    handler: ./faas-python
+    image: kenfdev/faas-python:latest
+    environment_file:
+      - .env.yml
+    environment:
+      content_type: 'application/json'
+  faas-ruby:
+    lang: ruby
+    handler: ./faas-ruby
+    image: kenfdev/faas-ruby:latest
+    environment_file:
+      - .env.yml
+    environment:
+      content_type: 'application/json'
+  faas-csharp:
+    lang: csharp
+    handler: ./faas-csharp
+    image: kenfdev/faas-csharp:latest
+    environment_file:
+      - .env.yml
+    environment:
+      content_type: 'application/json'
+  faas-php:
+    lang: php7
+    handler: ./faas-php
+    image: kenfdev/faas-php:latest
+    environment_file:
+      - .env.yml
+    environment:
+      content_type: 'application/json'

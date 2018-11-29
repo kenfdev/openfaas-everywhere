@@ -1,0 +1,58 @@
+#import "./lang-stats-fragment.gql"
+
+query AllStats($year: Int) {
+  nodejs(year: $year) {
+    ...langStatsFragment
+  }
+  go(year: $year) {
+    ...langStatsFragment
+  }
+  ruby(year: $year) {
+    ...langStatsFragment
+  }
+  python(year: $year) {
+    ...langStatsFragment
+  }
+  csharp(year: $year) {
+    ...langStatsFragment
+  }
+  php(year: $year) {
+    ...langStatsFragment
+  }
+}
+
+query NodeStats($year: Int) {
+  nodejs(year: $year) {
+    ...langStatsFragment
+  }
+}
+
+query GoStats($year: Int) {
+  go(year: $year) {
+    ...langStatsFragment
+  }
+}
+
+query RubyStats($year: Int) {
+  ruby(year: $year) {
+    ...langStatsFragment
+  }
+}
+
+query PythonStats($year: Int) {
+  python(year: $year) {
+    ...langStatsFragment
+  }
+}
+
+query CSharpStats($year: Int) {
+  csharp(year: $year) {
+    ...langStatsFragment
+  }
+}
+
+query PHPStats($year: Int) {
+  php(year: $year) {
+    ...langStatsFragment
+  }
+}

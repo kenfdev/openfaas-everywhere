@@ -1,2 +1,6 @@
 template
 build
+
+.env.yml
+node_modules/
+.vscode

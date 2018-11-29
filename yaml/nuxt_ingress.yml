@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /function/faas-nuxt-graphql
+  name: nuxtapp
+  namespace: openfaas
+spec:
+  rules:
+    - host: nuxt.openfaas.local
+      http:
+        paths:
+          - backend:
+              serviceName: gateway
+              servicePort: 8080
+            path: /

@@ -1,0 +1,5 @@
+fragment langStatsFragment on LangStats {
+  language
+  count
+  logoUrl
+}
